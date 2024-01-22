@@ -46,9 +46,13 @@
                                         <div class="text-center mb-1">
                                             <a href="/operator/sewa/{{ $item->id }} "
                                                 class="btn btn-primary  mb-2">Detail</a>
-
+                                            {{-- 
                                             <a href="https://api.whatsapp.com/send?phone={{ $item->hp }}&text=Selamat%20pagi/siang/sore,%20{{ $item->name }}.%20Kami%20senang%20Anda%20telah%20melakukan%20pemesanan%20mobil%20dengan%20tujuan%20{{ $item->tujuan }}%20dan%20alamat%20di%20{{ $item->alamat }}.%20Pemesanan%20Anda%20untuk%20periode%20dari%20tanggal%20{{ $item->tgl_boking }}%20hingga%20{{ $item->tgl_selesai }}%20telah%20kami%20terima.%20Apakah%20ada%20informasi%20tambahan%20yang%20perlu%20kami%20sampaikan?%20Jika%20ada%20pertanyaan%20atau%20perlu%20konfirmasi%20lebih%20lanjut,%20jangan%20ragu%20untuk%20menghubungi%20kami%20melalui%20nomor%20{{ $item->hp }}.%20Terima%20kasih%20atas%20kepercayaan%20Anda%20kepada%20layanan%20kami.%20Kami%20tunggu%20kedatangan%20Anda!"
+                                                class="btn btn-success mb-2" target="_blank">WhatsApp</a> --}}
+
+                                            <a href="https://api.whatsapp.com/send?phone={{ $item->hp }}&text=Selamat%20pagi/siang/sore,%20{{ $item->name }}.%20Kami%20senang%20Anda%20telah%20melakukan%20pemesanan%20mobil%20dengan%20tujuan%20{{ $item->tujuan }}%20dan%20alamat%20di%20{{ $item->alamat }}%20Pemesanan%20Anda%20untuk%20periode%20dari%20tanggal%20{{ \Carbon\Carbon::parse($item->tgl_boking)->isoFormat('DD MMMM YYYY') }}%20hingga%20{{ \Carbon\Carbon::parse($item->tgl_selesai)->isoFormat('DD MMMM YYYY') }}%20telah%20kami%20terima.%20Apakah%20ada%20informasi%20tambahan%20yang%20perlu%20kami%20sampaikan?%20Jika%20ada%20pertanyaan%20atau%20perlu%20konfirmasi%20lebih%20lanjut,%20jangan%20ragu%20untuk%20menghubungi%20kami%20melalui%20nomor%20{{ $item->hp }}.%20Terima%20kasih%20atas%20kepercayaan%20Anda%20kepada%20layanan%20kami.%20Kami%20tunggu%20kedatangan%20Anda!"
                                                 class="btn btn-success mb-2" target="_blank">WhatsApp</a>
+
 
 
                                             <form action="/operator/sewa/{{ $item->id }}" method="POST">
